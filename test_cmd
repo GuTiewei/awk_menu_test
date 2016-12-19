@@ -1,0 +1,9 @@
+This is a test cmd line file
+打印当前目录:pwd
+显示登陆用户:who am i
+查找最新的日志文件:find logs/log/ |sort -k1,1r |head -n 1
+统计3天前日志文件:find logs/log -ctime +3 |awk 'END{ print NR}'
+清除3天前的日志:find logs/log/ -ctime +3 |xargs rm
+统计3天前的report文件:find /var/lib/puppet/reports/controller-10-120-49-57 -ctime +3 |awk 'END{ print NR}'
+清除3天前的report文件:find /var/lib/puppet/reports/controller-10-120-49-57 -ctime +3 |xargs rm
+输出hello world:echo 'hello world'
