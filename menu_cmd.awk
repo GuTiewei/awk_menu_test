@@ -1,6 +1,7 @@
 #awk解析test_cmd文件中的格式命令
 #awk -f menu_cmd.awk -v file=test_cmd
 BEGIN{
+#解析命令保存在全局变量中	
 	FS = ":"
 	
 	if((getline < file) > 0)
@@ -15,7 +16,7 @@ BEGIN{
 		menu[size] = $1
 		cmd[size] = $2
 	}
-	close(file)
+	close(file) #关闭文件流	
 	list_menu()
 	
 }
@@ -31,7 +32,7 @@ BEGIN{
 		exit
 	}
 }
-
+#打印menu
 function list_menu() {
 	
 	system("clear")	
